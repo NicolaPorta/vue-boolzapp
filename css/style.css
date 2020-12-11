@@ -173,6 +173,7 @@ input {
   position: absolute;
   top: 5px;
   right: 8px;
+  height: 20px;
 }
 
 .left .contacts li:hover {
@@ -196,6 +197,7 @@ input {
   list-style: none;
   overflow-y: auto;
   padding: 30px 60px;
+  font-size: 15px;
 }
 
 .right .chat li {
