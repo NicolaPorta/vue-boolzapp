@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- FONTS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <!-- VUE CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <!-- CSS LINK -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>ToDoVue</title>
+</head>
+<body>
+  <div id="root">
+    <div class="left">
+      <div class="top">
+        <div class="user">
+          <img src="" alt="avatarUtente">
+          <h2>Nicola Porta</h2>
+        </div>
+        <div class="settings">
+          <i class="fas fa-circle-notch"></i>
+          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+      <div class="notify">
+        <i class="fas fa-bell-slash"></i>
+        <div class="text">
+          <span>Ricevi notifiche di nuovi messaggi</span>
+          <a href="#">Attiva notifiche desktop</a>
+        </div>
+      </div>
+      <div class="searchContacts">
+        <i class="fas fa-search"></i>
+        <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+      </div>
+      <ul class="contacts">
+
+      </ul>
+    </div>
+    <div class="right">
+      <div class="top">
+        <div class="contact">
+          <img src="" alt="avatarContact">
+          <div class="info">
+            <h2>NOME</h2>
+            <span>data</span>
+          </div>
+        </div>
+        <div class="settings">
+          <i class="fas fa-circle-notch"></i>
+          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+      <ul class="chat">
+        <li class="sent">Hai portato a spasso il cane?</li>
+        <li class="sent">Ricordati di dargli da mangiare</li>
+        <li class="received">Tutto fatto!</li>
+      </ul>
+      <div class="message">
+        <button type="button" name="button">SMILE</button>
+        <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+        <button type="button" name="button">Microphone</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+</html>
