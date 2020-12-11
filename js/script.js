@@ -92,20 +92,25 @@ var app = new Vue(
           lastAccess: 'Ultimo accesso 12/01/2020 14:27'
       	},
       ],
-      indexContact: 0
+      indexContact: 0,
+      search:"",
+      contactsListFiltered:[]
     },
     created: function() {
-      this.listFiltered = this.list;
+      this.contactsListFiltered = this.contactsList;
     },
     // FUNCTIONS
     methods: {
       // filter in list
       filterList: function() {
         if (this.search != "") {
-          this.listFiltered = this.listFiltered.filter(
-            (element)=> element.includes(this.search)
+          this.contactsListFiltered = this.contactsList.filter(
+            (element)=> {
+              return element.name.toUpperCase().includes(this.search.toUpperCase())
+            }
           );
-        } else this.listFiltered = this.list;
+        } else this.contactsListFiltered = this.contactsList;
+        console.log(this.contactsListFiltered);
       }
     }
   }
