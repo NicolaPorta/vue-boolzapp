@@ -53,6 +53,11 @@ input {
   font-size: 10px;
   color: #919191;
 }
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
 /* /general */
 
 #root {
@@ -156,10 +161,18 @@ input {
   border-bottom: 0.5px solid #EDEDED;
   cursor: pointer;
   transition: all .5s;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 .left .contacts li img {
   width: 50px;
   height: 50px;
+}
+.left .contacts li > span {
+  position: absolute;
+  top: 5px;
+  right: 8px;
 }
 
 .left .contacts li:hover {
@@ -174,11 +187,6 @@ input {
 .right > .top .contact {
   display: flex;
   align-items: center;
-}
-
-.right > .top .contact .info {
-  display: flex;
-  flex-direction: column;
 }
 
 .right .chat {

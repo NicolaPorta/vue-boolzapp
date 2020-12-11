@@ -39,7 +39,14 @@
         <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
       </div>
       <ul class="contacts">
-        <li v-for="(contacts, index) in contactsList" @click="indexContact = index"><img :src="contacts.avatar" alt="">{{contacts.name}}</li>
+        <li v-for="(contacts, index) in contactsList" @click="indexContact = index">
+          <img :src="contacts.avatar" alt="">
+          <div class="info">
+            <span>{{contacts.name}}</span>
+            <span class="date">{{contacts.messages[contacts.messages.length -1].text}}</span>
+          </div>
+          <span class="date">{{contacts.messages[contacts.messages.length -1].date}}</span>
+        </li>
       </ul>
     </div>
     <div class="right">
