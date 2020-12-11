@@ -23,7 +23,11 @@ img {
 }
 
 h3 {
-  font-size: 13px;
+  font-size: 14px;
+}
+
+a {
+  font-size: 14px;
 }
 
 i {
@@ -119,6 +123,10 @@ input {
   margin-left: 10px;
 }
 
+.left .notify .text span {
+  font-size: 15px;
+}
+
 .left .searchContacts {
   padding: 5px 12px;
   background-color: white;
@@ -184,10 +192,11 @@ input {
 
 .right .chat li {
   width: 300px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 17px;
-  border-radius: 5px;
+  border-radius: 8px;
   position: relative;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
 }
 
 .right .chat li .date {
