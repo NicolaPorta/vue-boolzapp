@@ -129,7 +129,7 @@ var app = new Vue(
       sendMessage: function(index) {
         if (this.newMessage != "") {
           let newText = {
-            date: "now",
+            date: "12/11/2020 23:27:00",
             text: this.newMessage,
             status: 'sent'
           }
