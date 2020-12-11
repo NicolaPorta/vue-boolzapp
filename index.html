@@ -4,20 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <!-- VUE CDN -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <!-- CSS LINK -->
   <link rel="stylesheet" href="css/style.css">
-  <title>ToDoVue</title>
+  <title>Boolzapp</title>
 </head>
 <body>
   <div id="root">
     <div class="left">
       <div class="top">
         <div class="user">
-          <img src="" alt="avatarUtente">
-          <h2>Nicola Porta</h2>
+          <img src="https://us.123rf.com/450wm/igorrita/igorrita1507/igorrita150700024/42584408-carattere-pantaloni-a-vita-bassa-piatta-moda-giovane-ragazzo-con-gli-occhiali-avatar-icona-uomo-illu.jpg?ver=6" alt="avatarUtente">
+          <h3>Nicola Porta</h3>
         </div>
         <div class="settings">
           <i class="fas fa-circle-notch"></i>
@@ -37,33 +39,35 @@
         <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
       </div>
       <ul class="contacts">
-
+        <li v-for="(contacts, index) in contactsList" @click="indexContact = index"><img :src="contacts.avatar" alt="">{{contacts.name}}</li>
       </ul>
     </div>
     <div class="right">
       <div class="top">
         <div class="contact">
-          <img src="" alt="avatarContact">
+          <img :src="contactsList[indexContact].avatar" alt="avatarContact">
           <div class="info">
-            <h2>NOME</h2>
-            <span>data</span>
+            <span>{{contactsList[indexContact].name}}</span>
+            <span class="date">{{contactsList[indexContact].lastAccess}}</span>
           </div>
         </div>
         <div class="settings">
-          <i class="fas fa-circle-notch"></i>
-          <i class="fas fa-comment-alt"></i>
+          <i class="fas fa-search"></i>
+          <i class="fas fa-paperclip"></i>
           <i class="fas fa-ellipsis-v"></i>
         </div>
       </div>
       <ul class="chat">
-        <li class="sent">Hai portato a spasso il cane?</li>
-        <li class="sent">Ricordati di dargli da mangiare</li>
-        <li class="received">Tutto fatto!</li>
+        <li :class="(message.status == 'received') ? 'received' : 'sent'"class="listItem" v-for="(message, index) in contactsList[indexContact].messages">
+          <span >{{message.text}}
+            <span class="date">{{message.date}}</span>
+          </span>
+        </li>
       </ul>
       <div class="message">
-        <button type="button" name="button">SMILE</button>
+        <button type="button" name="button"><i class="far fa-smile"></i></button>
         <input type="text" name="" value="" placeholder="Scrivi un messaggio">
-        <button type="button" name="button">Microphone</button>
+        <button type="button" name="button"><i class="fas fa-microphone"></i></button>
       </div>
     </div>
   </div>
