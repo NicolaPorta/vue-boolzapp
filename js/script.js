@@ -103,7 +103,8 @@ var app = new Vue(
         "https://www.wallpapertip.com/wmimgs/5-55896_wallpaper-background-whatsapp-default-dark-whatsapp-dark-wallpaper.jpg",
         "https://www.setaswall.com/wp-content/uploads/2019/08/Whatsapp-Wallpaper-112.jpg"
       ],
-      backgroundImage: "https://i.redd.it/qwd83nc4xxf41.jpg"
+      backgroundImage: "https://i.redd.it/qwd83nc4xxf41.jpg",
+      newMessage:""
     },
     created: function() {
       this.contactsListFiltered = this.contactsList;
@@ -124,6 +125,17 @@ var app = new Vue(
       changeBackground: function() {
         let randomize = Math.floor(Math.random() * this.backgroundList.length);
         this.backgroundImage = this.backgroundList[randomize];
+      },
+      sendMessage: function(index) {
+        if (this.newMessage != "") {
+          let newText = {
+            date: "now",
+            text: this.newMessage,
+            status: 'sent'
+          }
+          this.contactsList[index].messages.push(newText);
+          this.newMessage = "";
+        }
       }
     }
   }

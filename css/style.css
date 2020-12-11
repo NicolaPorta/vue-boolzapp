@@ -231,6 +231,10 @@ input {
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
 }
 
+.right .chat li::first-letter {
+  text-transform: capitalize;
+}
+
 .right .chat li .date {
   position: absolute;
   bottom: 2px;
