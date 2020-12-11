@@ -94,7 +94,16 @@ var app = new Vue(
       ],
       indexContact: 0,
       search:"",
-      contactsListFiltered:[]
+      contactsListFiltered:[],
+      backgroundList: [
+        "https://i.pinimg.com/originals/0f/05/27/0f05274b1bdc8feed70822513cd7a903.jpg",
+        "https://i.redd.it/xsd14fpxa7l41.jpg",
+        "https://wallpaperaccess.com/full/1288171.jpg",
+        "https://64.media.tumblr.com/59d9990a0adcb19e9f687a47953226b3/tumblr_ouztgbH0CG1vj8v9mo4_1280.png",
+        "https://www.wallpapertip.com/wmimgs/5-55896_wallpaper-background-whatsapp-default-dark-whatsapp-dark-wallpaper.jpg",
+        "https://www.setaswall.com/wp-content/uploads/2019/08/Whatsapp-Wallpaper-112.jpg"
+      ],
+      backgroundImage: "https://i.redd.it/qwd83nc4xxf41.jpg"
     },
     created: function() {
       this.contactsListFiltered = this.contactsList;
@@ -111,6 +120,10 @@ var app = new Vue(
           );
         } else this.contactsListFiltered = this.contactsList;
         console.log(this.contactsListFiltered);
+      },
+      changeBackground: function() {
+        let randomize = Math.floor(Math.random() * this.backgroundList.length);
+        this.backgroundImage = this.backgroundList[randomize];
       }
     }
   }

@@ -15,7 +15,7 @@
 </head>
 <body>
   <div id="root">
-    <div class="left">
+    <aside class="left">
       <div class="top">
         <div class="user">
           <img src="https://us.123rf.com/450wm/igorrita/igorrita1507/igorrita150700024/42584408-carattere-pantaloni-a-vita-bassa-piatta-moda-giovane-ragazzo-con-gli-occhiali-avatar-icona-uomo-illu.jpg?ver=6" alt="avatarUtente">
@@ -39,7 +39,7 @@
         <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat" v-model="search" v-on:keydown.enter="filterList">
       </div>
       <ul class="contacts">
-        <li v-for="(contacts, index) in contactsListFiltered" @click="indexContact = index">
+        <li v-for="(contacts, index) in contactsListFiltered" @click="indexContact = index" :class="(index == indexContact) ? 'selected' : '' ">
           <img :src="contacts.avatar" alt="">
           <div class="info">
             <span>{{contacts.name}}</span>
@@ -48,8 +48,9 @@
           <span class="date">{{contacts.messages[contacts.messages.length -1].date}}</span>
         </li>
       </ul>
-    </div>
+    </aside>
     <div class="right">
+      <img :src="backgroundImage" alt="" @click="changeBackground">
       <div class="top">
         <div class="contact">
           <img :src="contactsList[indexContact].avatar" alt="avatarContact">
@@ -65,6 +66,7 @@
         </div>
       </div>
       <ul class="chat">
+
         <li :class="(message.status == 'received') ? 'received' : 'sent'"class="listItem" v-for="(message, index) in contactsList[indexContact].messages">
           <span >{{message.text}}
             <span class="date">{{message.date}}</span>
