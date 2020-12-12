@@ -190,6 +190,15 @@ input {
   background-color: #EDEDED;
 }
 
+.left .contacts .info .date {
+  width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 12px;
+  margin-top: 6px;
+  text-overflow: ellipsis;
+}
+
 /* RIGHT */
 .right > img {
   width: 100%;
@@ -229,6 +238,7 @@ input {
   border-radius: 8px;
   position: relative;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+  overflow-wrap : break-word;
 }
 
 .right .chat li::first-letter {
