@@ -39,7 +39,7 @@
         <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat" v-model="search" v-on:keydown.enter="filterList">
       </div>
       <ul class="contacts">
-        <li v-for="(contacts, index) in contactsListFiltered" @click="indexContact = index" :class="(index == indexContact) ? 'selected' : '' ">
+        <li v-for="contacts in contactsListFiltered" @click="contactSelected = contacts" :class="(contacts == contactSelected) ? 'selected' : '' ">
           <img :src="contacts.avatar" alt="">
           <div class="info">
             <span>{{contacts.name}}</span>
@@ -50,23 +50,24 @@
       </ul>
     </aside>
     <div class="right">
+      <img class="screenblock" v-if="contactSelected == 0" src="https://static.whatsapp.net/rsrc.php/v3/yO/r/FsWUqRoOsPu.png" alt="">
       <img :src="backgroundImage" alt="" @click="changeBackground">
       <div class="top">
-        <div class="contact">
-          <img :src="contactsList[indexContact].avatar" alt="avatarContact">
+        <div class="contact" v-if="contactSelected != 0">
+          <img :src="contactSelected.avatar" alt="avatarContact">
           <div class="info">
-            <span>{{contactsList[indexContact].name}}</span>
-            <span class="date">{{contactsList[indexContact].lastAccess}}</span>
+            <span>{{contactSelected.name}}</span>
+            <span class="date">{{contactSelected.lastAccess}}</span>
           </div>
         </div>
-        <div class="settings">
+        <div class="settings" v-if="contactSelected != 0">
           <i class="fas fa-search"></i>
           <i class="fas fa-paperclip"></i>
           <i class="fas fa-ellipsis-v"></i>
         </div>
       </div>
       <ul class="chat">
-        <li :class="(message.status == 'received') ? 'received' : 'sent'"class="listItem" v-for="(message, index) in contactsList[indexContact].messages">
+        <li :class="(message.status == 'received') ? 'received' : 'sent'"class="listItem" v-for="(message, index) in contactSelected.messages">
           <span >{{message.text}}
             <span class="date">{{message.date}}</span>
           </span>
@@ -74,7 +75,7 @@
       </ul>
       <div class="message">
         <button type="button" name="button"><i class="far fa-smile"></i></button>
-        <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-on:keydown.enter="sendMessage(indexContact)" v-model="newMessage">
+        <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-on:keydown.enter="sendMessage(contactSelected)" v-model="newMessage">
         <button type="button" name="button"><i class="fas fa-microphone"></i></button>
       </div>
     </div>

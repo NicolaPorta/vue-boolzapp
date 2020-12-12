@@ -92,7 +92,7 @@ var app = new Vue(
           lastAccess: 'Ultimo accesso 12/01/2020 14:27'
       	},
       ],
-      indexContact: 0,
+      contactSelected: 0,
       search:"",
       contactsListFiltered:[],
       backgroundList: [
@@ -126,14 +126,14 @@ var app = new Vue(
         let randomize = Math.floor(Math.random() * this.backgroundList.length);
         this.backgroundImage = this.backgroundList[randomize];
       },
-      sendMessage: function(index) {
+      sendMessage: function(object) {
         if (this.newMessage != "") {
           let newText = {
             date: "12/11/2020 23:27:00",
             text: this.newMessage,
             status: 'sent'
           }
-          this.contactsList[index].messages.push(newText);
+          this.object.messages.push(newText);
           this.newMessage = "";
         }
       }
