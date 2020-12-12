@@ -29,6 +29,13 @@ h3 {
 
 a {
   font-size: 13px;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active, a:visited {
+  color: blue;
 }
 
 i {
@@ -194,7 +201,7 @@ input {
   width: 120px;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 6px;
   text-overflow: ellipsis;
 }
@@ -219,6 +226,11 @@ input {
 .right > .top .contact {
   display: flex;
   align-items: center;
+}
+
+.right > .top .contact .date {
+  font-size: 12px;
+  margin-top: 2px;
 }
 
 .right .chat {
