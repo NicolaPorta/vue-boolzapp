@@ -133,7 +133,7 @@ var app = new Vue(
             text: this.newMessage,
             status: 'sent'
           }
-          this.object.messages.push(newText);
+          object.messages.push(newText);
           this.newMessage = "";
         }
       }
