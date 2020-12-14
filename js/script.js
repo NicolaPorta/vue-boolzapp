@@ -166,7 +166,6 @@ var app = new Vue(
       },
       deleteMessage: function(index) {
         this.contactSelected.messages.splice(index,1);
-        console.log(this.contactSelected.messages.length);
       }
     }
   }
