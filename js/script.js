@@ -104,7 +104,8 @@ var app = new Vue(
         "https://www.setaswall.com/wp-content/uploads/2019/08/Whatsapp-Wallpaper-112.jpg"
       ],
       backgroundImage: "https://i.redd.it/qwd83nc4xxf41.jpg",
-      newMessage:""
+      newMessage:"",
+      deleteMessageindex: -1
     },
     created: function() {
       this.contactsListFiltered = this.contactsList;
@@ -154,9 +155,19 @@ var app = new Vue(
             function() {
               object.messages.push(answer);
             }
-          ,1000)
-
+          ,1000);
         }
+      },
+      createMessageIndex: function(index) {
+        if (this.deleteMessageindex != index) {
+          this.deleteMessageindex = index;
+        } else this.deleteMessageindex = -1;
+      },
+      deleteMessage: function(message) {
+        this.contactSelected.messages.splice(message,1);
+        // if (this.contactSelected.messages.length == 0) {
+        //   this.contactsListFiltered.splice(this.contactSelected,1)
+        // }
       }
     }
   }
