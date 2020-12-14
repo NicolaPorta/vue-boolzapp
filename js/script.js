@@ -163,8 +163,8 @@ var app = new Vue(
           this.deleteMessageindex = index;
         } else this.deleteMessageindex = -1;
       },
-      deleteMessage: function(message) {
-        this.contactSelected.messages.splice(message,1);
+      deleteMessage: function(index) {
+        this.contactSelected.messages.splice(index,1);
         console.log(this.contactSelected.messages.length);
       }
     }

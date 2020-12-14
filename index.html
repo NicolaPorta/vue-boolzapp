@@ -72,7 +72,7 @@
           <span>{{message.text}}</span>
           <span class="date">{{message.date}}</span>
           <span :class="deleteMessageindex == index ? 'show' : 'hidden'"><i class="fas fa-chevron-down"></i></span>
-          <span class="delete-window" v-if="deleteMessageindex == index" @click="deleteMessage(message, index)">Delete message</span>
+          <span class="delete-window" v-if="deleteMessageindex == index" @click="deleteMessage(deleteMessageindex)">Delete message</span>
         </li>
       </ul>
       <div class="message">
