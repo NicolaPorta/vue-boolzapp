@@ -25,7 +25,7 @@ var app = new Vue(
       				status: 'received'
       			}
           ],
-          lastAccess: 'Ultimo accesso 10/01/2020 18:49'
+          lastAccess: dayjs("12/01/2020 19:16").fromNow()
         },
         {
       		name: 'Fabio',
@@ -33,22 +33,22 @@ var app = new Vue(
       		visible: true,
       		messages: [
       			{
-      				date: '20/03/2020 16:30:00',
+      				date: '03/20/2020 16:30:00',
       				text: 'Ciao come stai?',
       				status: 'sent'
       			},
       			{
-      				date: '20/03/2020 16:30:55',
+      				date: '03/20/2020 16:30:55',
       				text: 'Bene grazie! Stasera ci vediamo?',
       				status: 'received'
       			},
       			{
-      				date: '20/03/2020 16:35:00',
+      				date: '03/20/2020 16:35:00',
       				text: 'Mi piacerebbe ma devo andare a fare la spesa.',
       				status: 'sent'
       			}
       		],
-          lastAccess: 'Ultimo accesso 15/01/2020 19:45'
+          lastAccess: dayjs("12/09/2020 10:06").fromNow()
       	},
       	{
       		name: 'Samuele',
@@ -56,22 +56,22 @@ var app = new Vue(
       		visible: true,
       		messages: [
       			{
-      				date: '28/03/2020 10:10:40',
+      				date: '03/28/2020 10:10:40',
       				text: 'La Marianna va in campagna',
       				status: 'received'
       			},
       			{
-      				date: '28/03/2020 10:20:10',
+      				date: '03/28/2020 10:20:10',
       				text: 'Sicuro di non aver sbagliato chat?',
       				status: 'sent'
       			},
       			{
-      				date: '28/03/2020 16:15:22',
+      				date: '03/28/2020 16:15:22',
       				text: 'Ah scusa!',
       				status: 'received'
       			}
       		],
-          lastAccess: 'Ultimo accesso 09/01/2020 15:50'
+          lastAccess: dayjs("12/01/2020 12:47").fromNow()
       	},
       	{
       		name: 'Luisa',
@@ -89,7 +89,7 @@ var app = new Vue(
       				status: 'received'
       			}
       		],
-          lastAccess: 'Ultimo accesso 12/01/2020 14:27'
+          lastAccess: dayjs("11/01/2020 15:50").fromNow()
       	},
       ],
       contactSelected: 0,
@@ -109,6 +109,17 @@ var app = new Vue(
     created: function() {
       this.contactsListFiltered = this.contactsList;
     },
+    mounted: function() {
+      this.contactsList.forEach(
+        (element) => {
+          element.messages.forEach(
+            (element) => {
+              element.date = dayjs(element.date).fromNow();
+            }
+          );
+        }
+      );
+    },
     // FUNCTIONS
     methods: {
       // filter in list
@@ -120,7 +131,6 @@ var app = new Vue(
             }
           );
         } else this.contactsListFiltered = this.contactsList;
-        console.log(this.contactsListFiltered);
       },
       changeBackground: function() {
         let randomize = Math.floor(Math.random() * this.backgroundList.length);
@@ -129,12 +139,23 @@ var app = new Vue(
       sendMessage: function(object) {
         if (this.newMessage != "") {
           let newText = {
-            date: "12/11/2020 23:27:00",
+            date: dayjs().fromNow(),
             text: this.newMessage,
             status: 'sent'
           }
+          let answer = {
+            date: dayjs().fromNow(),
+            text: "OK",
+            status: 'received'
+          }
           object.messages.push(newText);
           this.newMessage = "";
+          setTimeout(
+            function() {
+              object.messages.push(answer);
+            }
+          ,1000)
+
         }
       }
     }
