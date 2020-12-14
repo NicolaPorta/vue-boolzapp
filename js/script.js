@@ -136,6 +136,7 @@ var app = new Vue(
       changeBackground: function() {
         let randomize = Math.floor(Math.random() * this.backgroundList.length);
         this.backgroundImage = this.backgroundList[randomize];
+        this.deleteMessageindex = -1
       },
       sendMessage: function(object) {
         if (this.newMessage != "") {
