@@ -86,7 +86,7 @@ input {
 .fas.fa-chevron-down {
   position: absolute;
   bottom: 7px;
-  right: 0;
+  right: 10px;
   font-size: 15px;
 }
 
@@ -304,7 +304,7 @@ input {
 
 .right .chat li .delete-window {
   position: absolute;
-  right: 4px;
+  right: 10px;
   top: 75%;
   background-color: white;
   padding: 20px;

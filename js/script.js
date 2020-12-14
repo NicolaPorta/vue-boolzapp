@@ -6,7 +6,7 @@ var app = new Vue(
       contactsList: [
         {
       		name: 'Claudia',
-      		avatar: 'https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_female_woman_avatar-512.png',
+      		avatar: 'https://www.rivistablam.it/wp-content/uploads/2020/04/claudia-petrucci-850x560.jpg',
       		visible: true,
       		messages: [
       			{
@@ -29,7 +29,7 @@ var app = new Vue(
         },
         {
       		name: 'Fabio',
-      		avatar: 'https://www.popsci.com/resizer/oBw2zifFCqH3deU6vy2bPRSG99Q=/760x456/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/WMD5M52LJFBEBIHNEEABHVB6LA.jpg',
+      		avatar: 'https://www.agile-school.com/hs-fs/hubfs/Images/Fabio-Lisca_preview-819x1024.jpeg?width=819&name=Fabio-Lisca_preview-819x1024.jpeg',
       		visible: true,
       		messages: [
       			{
@@ -52,7 +52,7 @@ var app = new Vue(
       	},
       	{
       		name: 'Samuele',
-      		avatar: 'https://image.freepik.com/premium-vector/bearded-man-avatar-man-vector-portrait_9385-36.jpg',
+      		avatar: 'https://cdn.britannica.com/77/191077-050-63262B99/Samuel-L-Jackson.jpg',
       		visible: true,
       		messages: [
       			{
@@ -75,7 +75,7 @@ var app = new Vue(
       	},
       	{
       		name: 'Luisa',
-      		avatar: 'https://image.freepik.com/premium-vector/woman-avatar-profile-round-icon_24640-14042.jpg',
+      		avatar: 'https://telecaprinews.it/wp-content/uploads/2019/12/luisa-ranieri.jpg',
       		visible: true,
       		messages: [
       			{
