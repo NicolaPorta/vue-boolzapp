@@ -89,6 +89,15 @@ input {
   right: 7px;
   font-size: 15px;
 }
+
+.new-chat {
+  font-size: 13px;
+  color: #00BFA5;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 /* /general */
 
 /* COMPLETE CHAT */

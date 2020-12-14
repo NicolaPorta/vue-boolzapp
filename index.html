@@ -43,9 +43,10 @@
           <img :src="contacts.avatar" alt="">
           <div class="info">
             <span>{{contacts.name}}</span>
-            <span class="date">{{contacts.messages[contacts.messages.length -1].text}}</span>
+            <span class="date" v-if="contacts.messages.length >= 1">{{contacts.messages[contacts.messages.length -1].text}}</span>
+            <span class="new-chat" v-else>Inizia a chattare</span>
           </div>
-          <span class="date">{{contacts.messages[contacts.messages.length -1].date}}</span>
+          <span class="date" v-if="contacts.messages.length >= 1">{{contacts.messages[contacts.messages.length -1].date}}</span>
         </li>
       </ul>
     </aside>
@@ -67,7 +68,7 @@
         </div>
       </div>
       <ul class="chat">
-        <li :class="(message.status == 'received') ? 'received' : 'sent'"class="listItem" v-for="(message, index) in contactSelected.messages" @click="createMessageIndex(index)">
+        <li :class="(message.status == 'received') ? 'received' : 'sent'"class="listItem" v-for="(message, index) in contactSelected.messages" @click="createMessageIndex(index)" v-if="contactSelected.messages.length >= 1">
           <span>{{message.text}}</span>
           <span class="date">{{message.date}}</span>
           <span :class="deleteMessageindex == index ? 'show' : 'hidden'"><i class="fas fa-chevron-down"></i></span>
