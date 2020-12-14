@@ -25,7 +25,7 @@ var app = new Vue(
       				status: 'received'
       			}
           ],
-          lastAccess: dayjs("12/01/2020 19:16").fromNow()
+          lastAccess: "12/01/2020 19:16"
         },
         {
       		name: 'Fabio',
@@ -48,7 +48,7 @@ var app = new Vue(
       				status: 'sent'
       			}
       		],
-          lastAccess: dayjs("12/09/2020 10:06").fromNow()
+          lastAccess: "12/09/2020 10:06"
       	},
       	{
       		name: 'Samuele',
@@ -71,7 +71,7 @@ var app = new Vue(
       				status: 'received'
       			}
       		],
-          lastAccess: dayjs("12/01/2020 12:47").fromNow()
+          lastAccess: "12/01/2020 12:47"
       	},
       	{
       		name: 'Luisa',
@@ -89,8 +89,169 @@ var app = new Vue(
       				status: 'received'
       			}
       		],
-          lastAccess: dayjs("11/01/2020 15:50").fromNow()
+          lastAccess: "11/01/2020 15:50"
       	},
+        {
+      		name: 'Gianni',
+      		avatar: 'https://media.urbanpost.it/wp-content/uploads/2017/05/morandi.jpg',
+      		visible: true,
+      		messages: [
+      			{
+      				date: '10/01/2020 15:30:55',
+      				text: 'Hai la spesa?',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 15:50:00',
+      				text: 'Ricordati che abbiamo un appuntamento',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 16:15:22',
+      				text: 'No!',
+      				status: 'received'
+      			}
+          ],
+          lastAccess: "12/01/2020 19:16"
+        },
+        {
+      		name: 'Andrea',
+      		avatar: 'https://cdn.calciomercato.com/images/2020-08/Andrea.Agnelli.Juve.2019.20.1080x648.jpg',
+      		visible: true,
+      		messages: [
+      			{
+      				date: '10/01/2020 15:30:55',
+      				text: 'Non ci credo',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 15:50:00',
+      				text: 'Complimenti!',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 16:15:22',
+      				text: 'Grazie!',
+      				status: 'received'
+      			}
+          ],
+          lastAccess: "12/01/2020 19:16"
+        },
+        {
+      		name: 'Matteo',
+      		avatar: 'https://pbs.twimg.com/profile_images/906796230839296000/ZrW9jYJ1.jpg',
+      		visible: true,
+      		messages: [
+      			{
+      				date: '10/01/2020 15:30:55',
+      				text: 'Tanti auguri!!',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 15:50:00',
+      				text: 'Ormai sei un vecchio',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 16:15:22',
+      				text: 'Già...',
+      				status: 'received'
+      			}
+          ],
+          lastAccess: "12/01/2020 19:16"
+        },
+        {
+      		name: 'Enzo',
+      		avatar: 'https://www.musikandance.it/wp-content/uploads/bfi_thumb/enzo-dong-owv6lvjplfezhyvi8qkvxh8e9w1dengxppqylggrwg.jpeg',
+      		visible: true,
+      		messages: [
+      			{
+      				date: '10/01/2020 15:30:55',
+      				text: 'Ho ricevuto una telefonata da questo numero',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 15:50:00',
+      				text: 'Ho sbagliato numero',
+      				status: 'received'
+      			},
+      			{
+      				date: '10/01/2020 16:15:22',
+      				text: 'mi perdoni',
+      				status: 'received'
+      			}
+          ],
+          lastAccess: "12/01/2020 19:16"
+        },
+        {
+      		name: 'Simona',
+      		avatar: 'https://www.ilpopoloveneto.it/giornale/wp-content/uploads/2020/01/Simona-Cavallari--680x400.jpg',
+      		visible: true,
+      		messages: [
+      			{
+      				date: '10/01/2020 15:30:55',
+      				text: 'Ci vediamo oggi?',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 15:50:00',
+      				text: 'Non so se riesco stasera',
+      				status: 'received'
+      			},
+      			{
+      				date: '10/01/2020 16:15:22',
+      				text: 'Fammi sapere!',
+      				status: 'received'
+      			}
+          ],
+          lastAccess: "12/01/2020 19:16"
+        },
+        {
+      		name: 'Palmira',
+      		avatar: 'https://www.siccomforniture.it/wp-content/uploads/2019/03/casacca-palmira-nera-isacco-005101m.jpg',
+      		visible: true,
+      		messages: [
+      			{
+      				date: '10/01/2020 15:30:55',
+      				text: 'Hai portato il gatto dal veterinario?',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 15:50:00',
+      				text: 'Sto andando adesso',
+      				status: 'received'
+      			},
+      			{
+      				date: '10/01/2020 18:20:22',
+      				text: 'Fatto!',
+      				status: 'received'
+      			}
+          ],
+          lastAccess: "12/01/2020 19:16"
+        },
+        {
+      		name: 'Tonio',
+      		avatar: 'https://vignette.wikia.nocookie.net/lamelevisione/images/9/9b/Tonio_Cartonio.jpg/revision/latest?cb=20190211224627&path-prefix=it',
+      		visible: true,
+      		messages: [
+      			{
+      				date: '10/01/2020 15:30:55',
+      				text: 'Andiamo a pesca?',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 15:50:00',
+      				text: 'Solo per il tramonto...',
+      				status: 'sent'
+      			},
+      			{
+      				date: '10/01/2020 16:15:22',
+      				text: 'Passo da te alle 18:00',
+      				status: 'received'
+      			}
+          ],
+          lastAccess: "12/01/2020 19:16"
+        }
       ],
       contactSelected: 0,
       search:"",
@@ -113,6 +274,7 @@ var app = new Vue(
     mounted: function() {
       this.contactsList.forEach(
         (element) => {
+          element.lastAccess = dayjs(element.lastAccess).fromNow();
           element.messages.forEach(
             (element) => {
               element.date = dayjs(element.date).fromNow();
@@ -158,11 +320,6 @@ var app = new Vue(
             }
           ,1000);
         }
-      },
-      createMessageIndex: function(index) {
-        if (this.deleteMessageindex != index) {
-          this.deleteMessageindex = index;
-        } else this.deleteMessageindex = -1;
       },
       deleteMessage: function(index) {
         this.contactSelected.messages.splice(index,1);

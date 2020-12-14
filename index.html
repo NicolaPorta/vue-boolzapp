@@ -68,7 +68,7 @@
         </div>
       </div>
       <ul class="chat">
-        <li :class="(message.status == 'received') ? 'received' : 'sent'"class="listItem" v-for="(message, index) in contactSelected.messages" @click="createMessageIndex(index)" v-if="contactSelected.messages.length >= 1">
+        <li :class="(message.status == 'received') ? 'received' : 'sent'"class="listItem" v-for="(message, index) in contactSelected.messages" @click="deleteMessageindex != index ? deleteMessageindex = index : deleteMessageindex = -1" v-if="contactSelected.messages.length >= 1">
           <span>{{message.text}}</span>
           <span class="date">{{message.date}}</span>
           <span :class="deleteMessageindex == index ? 'show' : 'hidden'"><i class="fas fa-chevron-down"></i></span>
