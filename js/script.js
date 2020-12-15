@@ -319,7 +319,7 @@ var app = new Vue(
               object.messages.push(answer);
             }
           ,1000);
-          this.contactSelected.lastAccess = dayjs().fromNow()
+          this.contactSelected.lastAccess = dayjs().fromNow();
         }
       },
       deleteMessage: function(index) {
