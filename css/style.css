@@ -185,7 +185,6 @@ input {
   padding: 5px 12px;
   background-color: white;
   border-radius: 40px;
-  width: 96%;
   margin: 8px;
 }
 
@@ -230,7 +229,7 @@ input {
 }
 
 .left .contacts .info .date {
-  width: 120px;
+  max-width: 120px;
   overflow: hidden;
   white-space: nowrap;
   font-size: 14px;
@@ -334,4 +333,74 @@ input {
   outline: none;
   padding: 10px 20px;
   border-radius: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+  i {
+    font-size: 15px;
+    margin: 0;
+    padding: 2px;
+  }
+
+  .notify {
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .left .date {
+    display: none;
+  }
+
+  i {
+    font-size: 10px;
+  }
+
+  .left .settings {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .notify a, .notify span {
+    display: none;
+  }
+
+  .right .chat {
+    padding: 15px 15px;
+  }
+
+  .right .chat li {
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .left .info span {
+    display: none;
+  }
+
+  .left li {
+    justify-content: center
+  }
+
+  .left .top h3 {
+    display: none;
+  }
+
+  .searchContacts input {
+    display: none;
+  }
+
+  .right .top .settings {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right .top .date {
+    display: none;
+  }
+
 }
