@@ -201,7 +201,7 @@ var app = new Vue(
       			{
       				date: '10/01/2020 16:15:22',
       				text: 'Fammi sapere!',
-      				status: 'received'
+      				status: 'sent'
       			}
           ],
           lastAccess: "12/01/2020 19:16"
@@ -253,7 +253,7 @@ var app = new Vue(
           lastAccess: "12/01/2020 19:16"
         }
       ],
-      contactSelected: 0,
+      contactSelected: "",
       search:"",
       contactsListFiltered:[],
       backgroundList: [
@@ -289,16 +289,14 @@ var app = new Vue(
       filterList: function() {
         if (this.search != "") {
           this.contactsListFiltered = this.contactsList.filter(
-            (element)=> {
-              return element.name.toUpperCase().includes(this.search.toUpperCase())
-            }
+            (element)=> element.name.toUpperCase().includes(this.search.toUpperCase())
           );
         } else this.contactsListFiltered = this.contactsList;
       },
       changeBackground: function() {
         let randomize = Math.floor(Math.random() * this.backgroundList.length);
         this.backgroundImage = this.backgroundList[randomize];
-        this.deleteMessageindex = -1
+        this.deleteMessageindex = -1;
       },
       sendMessage: function(object) {
         if (this.newMessage != "") {
@@ -306,12 +304,12 @@ var app = new Vue(
             date: dayjs().fromNow(),
             text: this.newMessage,
             status: 'sent'
-          }
+          };
           let answer = {
             date: dayjs().fromNow(),
             text: "OK",
             status: 'received'
-          }
+          };
           object.messages.push(newText);
           this.newMessage = "";
           setTimeout(
